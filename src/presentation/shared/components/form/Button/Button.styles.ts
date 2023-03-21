@@ -23,6 +23,8 @@ export const Container = styled.button<ButtonProps>`
   ${({ theme, variant = 'primary' }) => css`
     ${variants[variant]}
 
+    width: 100%;
+
     color: ${theme.colors.white};
     font-weight: 700;
     font-size: 1.2rem;
