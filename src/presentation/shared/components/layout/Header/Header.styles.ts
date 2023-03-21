@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styled, { css } from 'styled-components'
 
 export const Container = styled.header`
@@ -13,23 +14,27 @@ export const Container = styled.header`
   `}
 `
 
-export const Logo = styled.h1`
+export const Logo = styled(Link)`
   ${({ theme }) => css`
     color: ${theme.colors.white};
     font-weight: 700;
     font-size: 2rem;
     line-height: 2.7rem;
+    text-decoration: none;
   `}
 `
 
-export const Cart = styled.button`
+export const Cart = styled(Link)`
   ${({ theme }) => css`
     display: flex;
     align-items: flex-end;
     gap: 0.8rem;
 
-    border: none;
-    background-color: transparent;
+    text-decoration: none;
+
+    @media (max-width: ${theme.media.md}) {
+      align-items: center;
+    }
 
     div {
       text-align: right;
@@ -39,6 +44,10 @@ export const Cart = styled.button`
         font-size: 1.4rem;
         line-height: 1.9rem;
         color: ${theme.colors.white};
+
+        @media (max-width: ${theme.media.md}) {
+          display: none;
+        }
       }
 
       span {

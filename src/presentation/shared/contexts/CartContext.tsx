@@ -1,9 +1,16 @@
 import { createContext } from './createContext'
 
+type Movie = {
+  id: number
+  title: string
+  price: number
+  image: string
+}
+
 type CardProps = {
-  productsId: number[]
+  products: Movie[]
 }
 
 export const [CartProvider, useCart] = createContext<CardProps>({
-  productsId: [],
+  products: [],
 })

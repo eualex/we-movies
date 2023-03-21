@@ -17,14 +17,14 @@ type Props = {
 }
 
 export function Movie({ movie }: Props) {
-  const [productsId, setCart] = useCart((store) => store.productsId)
+  const [products, setCart] = useCart((store) => store.products)
 
-  const alreadyExists = productsId.includes(movie.id)
+  const alreadyExists = products.includes(movie)
 
   function handleAddToCart() {
-    const productIdList = new Set(productsId)
-    productIdList.add(movie.id)
-    setCart({ productsId: Array.from(productIdList) })
+    const productList = new Set(products)
+    productList.add(movie)
+    setCart({ products: Array.from(productList) })
   }
 
   return (

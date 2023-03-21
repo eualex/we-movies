@@ -6,6 +6,7 @@ import { GlobalStyles } from './global'
 const theme = {
   colors: {
     white: '#ffffff',
+    gray50: '#D9D9D9',
     gray300: '#999999',
     gray600: '#333333',
     gray900: '#2F2E41',

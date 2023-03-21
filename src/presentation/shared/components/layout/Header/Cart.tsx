@@ -1,15 +1,18 @@
-import { useCart } from '@/presentation/shared/contexts/CartContext'
 import Image from 'next/image'
+
+import { useCart } from '@/presentation/shared/contexts/CartContext'
+
 import * as S from './Header.styles'
+import { APP_ROUTES } from '@/presentation/shared/constants/routes'
 
 export function Cart() {
-  const [productsId] = useCart((store) => store.productsId)
+  const [products] = useCart((store) => store.products)
 
   return (
-    <S.Cart aria-label="Meu carrinho">
+    <S.Cart href={APP_ROUTES.CART} aria-label="Meu carrinho">
       <div>
         <p>Meu Carrinho</p>
-        <span>{productsId?.length} itens</span>
+        <span>{products?.length} itens</span>
       </div>
 
       <Image
