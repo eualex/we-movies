@@ -17,7 +17,7 @@ const theme = {
   },
   spaces: {},
   radii: {
-    1: '4px',
+    sm: '4px',
   },
   shadow: {},
   media: {
