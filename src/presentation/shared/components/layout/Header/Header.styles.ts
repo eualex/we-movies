@@ -25,7 +25,7 @@ export const Logo = styled.h1`
 export const Cart = styled.button`
   ${({ theme }) => css`
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     gap: 0.8rem;
 
     border: none;

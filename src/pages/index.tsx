@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home - WeFit Test</title>
+        <title>Home - WeMovies</title>
       </Head>
 
       <Header />
