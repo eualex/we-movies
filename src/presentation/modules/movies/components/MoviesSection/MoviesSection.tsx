@@ -20,7 +20,7 @@ type Response = {
 
 export function MoviesSection() {
   const { data, error, isLoading } = useSWR<Response>(
-    'http://localhost:3000/movies.json',
+    '/movies.json',
     getMoovies,
   )
 
