@@ -2,18 +2,18 @@ import { APP_ROUTES } from '@/presentation/shared/constants/routes'
 
 import { InformationBox } from '@/presentation/shared/components/layout/InformationBox/InformationBox'
 
-import notFoundIllustration from '@/public/images/not_found_illustration.svg'
+import orderSuccessillustration from '@/public/images/purshase_success_illustration.svg'
 
-export function ProductsNotFound() {
+export function OrderCompletedSuccessfully() {
   return (
     <InformationBox>
       <InformationBox.Message>
-        Parece que não há nada por aqui :(
+        Compra realizada com sucesso!
       </InformationBox.Message>
 
       <InformationBox.Image
-        src={notFoundIllustration}
-        alt="Mulher demonstrando tristeza por não ter nada no seu carrinho."
+        src={orderSuccessillustration}
+        alt="Homem demonstrando felicidade pro ter finalizado sua compra."
       />
 
       <InformationBox.Button href={APP_ROUTES.HOME} />

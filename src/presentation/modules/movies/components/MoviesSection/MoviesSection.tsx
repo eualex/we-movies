@@ -42,7 +42,7 @@ export function MoviesSection() {
   return (
     <S.Container>
       {data?.products.map((movie) => (
-        <Movie key={movie.id} movie={movie} />
+        <Movie key={movie.id} movie={{ ...movie, amount: movie.price }} />
       ))}
     </S.Container>
   )

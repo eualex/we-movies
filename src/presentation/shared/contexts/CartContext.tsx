@@ -5,6 +5,7 @@ type Movie = {
   title: string
   price: number
   image: string
+  amount: number
 }
 
 type CardProps = {

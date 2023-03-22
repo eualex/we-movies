@@ -1,15 +1,17 @@
 import Image from 'next/image'
+import { useCart } from '@/presentation/shared/contexts/CartContext'
+import { formatPrice } from '@/presentation/shared/utils/formatPrice'
 
 import { Button } from '@/presentation/shared/components/form'
 
 import * as S from './Movie.styles'
-import { useCart } from '@/presentation/shared/contexts/CartContext'
 
 type MovieType = {
   id: number
   title: string
   price: number
   image: string
+  amount: number
 }
 
 type Props = {
@@ -19,7 +21,7 @@ type Props = {
 export function Movie({ movie }: Props) {
   const [products, setCart] = useCart((store) => store.products)
 
-  const alreadyExists = products.includes(movie)
+  const alreadyExists = products.find((p) => p.id === movie.id)
 
   function handleAddToCart() {
     const productList = new Set(products)
@@ -33,12 +35,7 @@ export function Movie({ movie }: Props) {
 
       <S.TextGroup>
         <h1>{movie.title}</h1>
-        <strong>
-          {Intl.NumberFormat('pt-br', {
-            style: 'currency',
-            currency: 'BRL',
-          }).format(movie.price)}
-        </strong>
+        <strong>{formatPrice(movie.price)}</strong>
       </S.TextGroup>
 
       <Button
